@@ -167,5 +167,11 @@ Merge's additive behaviour and its no-op on a second run, the rename-aside, rest
 populated and empty targets, the all-or-nothing abort, `-WhatIf` on each writing mode, tampered
 staging, and every refusal path.
 
-Inventory, Export, and Compare have been run for real between two PCs. Merge and Import have **not**
-yet been run against a real Accordance install.
+Inventory, Export, and Compare have been run for real between two PCs.
+
+**Merge and Import are not proven, and one real attempt failed.** On 09/11/2026, between two VMs
+on the same 14.1.2 build, importing Preferences and UserFiles while keeping the destination's own
+module library (plus merging one module in) left Accordance crashing on launch with
+`EAccessViolation`. The vendor procedure moves all four folders as one set; splitting that set is
+the leading suspect. Until that is resolved, move the full set as the article describes rather
+than mixing per-item strategies.
